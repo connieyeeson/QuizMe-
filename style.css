@@ -1,0 +1,108 @@
+*{
+        margin: 0;
+        padding: 0;
+
+ }
+
+ body {
+
+        background-color: gray;
+
+
+ }
+
+     header{
+
+        background-color:  cadetblue;
+        padding:1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color:white;
+        font-size: 30px;
+        font-weight: 900;
+
+     }
+
+     header div {
+
+            background-color: grey;
+            width: 15vw;
+            padding: 0.5rem;
+            border-radius: 5%;
+            text-align: center;
+            display: flex;
+            cursor: pointer;
+
+
+    }
+
+     .quesNans-bar {
+
+            background-color: cadetblue;
+            width: 38vw;
+            height: 70vh;
+            margin: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+
+    }
+
+
+    .quesNans-bar div {
+
+            background-color: grey;
+            width: 35vw;
+            height: 30vh;
+
+    }
+
+    .ques-bar {
+
+            text-align: center;
+    }
+
+    .ans-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 10vh;
+
+
+
+
+    }
+
+    .nav-bar {
+
+        /* background-color: cadetblue; */
+        display: flex;
+        justify-content: space-evenly;
+        width: 40vw;
+        margin-left:auto;
+        margin-right: auto;
+        padding: 0.3rem;
+        font-size:30px;
+    }
+
+    .nav-bar div {
+
+        background-color: coral;
+        width: 10vw;
+        text-align: center;
+        border-radius: 10%;
+        border: 5px saddlebrown solid;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .ans-bar div {
+
+      margin: 10px;
+
+    }
