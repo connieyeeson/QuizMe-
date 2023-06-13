@@ -67,13 +67,19 @@
             text-align: center;
     }
 
+
+    .ques-bar input {
+
+        background-color: coral;
+        padding: 0.5rem;
+        font-weight: 700;
+
+    }
     .ans-bar {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         height: 10vh;
-
-
 
 
     }
@@ -87,18 +93,19 @@
         margin-left:auto;
         margin-right: auto;
         padding: 0.3rem;
-        font-size:30px;
     }
 
-    .nav-bar div {
+    .nav-bar input {
 
         background-color: coral;
         width: 10vw;
         text-align: center;
         border-radius: 10%;
-        border: 5px saddlebrown solid;
+        border: 5px rgb(82, 67, 57) solid;
         cursor: pointer;
+        font-size: 1.3rem;
         font-weight: 600;
+        padding: 0.5rem;
     }
 
     .ans-bar div {
@@ -106,3 +113,5 @@
       margin: 10px;
 
     }
+
+    
