@@ -86,10 +86,10 @@
 
     .nav-bar {
 
-        /* background-color: cadetblue; */
+        background-color: cadetblue;
         display: flex;
         justify-content: space-evenly;
-        width: 40vw;
+        width: 60vw;
         margin-left:auto;
         margin-right: auto;
         padding: 0.3rem;
@@ -114,4 +114,83 @@
 
     }
 
+
+    /* RESPONSIVENESS */
+
+        @media screen and ( max-width:700px){
+
+            body {
+
+                background-color: gray;
+                width: 96.5%;
+               
     
+         }
+
+
+            header{
+
+                width: 95%;
+                background-color:  rgb(23, 235, 242);
+                height: 10vh;
+            }
+
+            header div {
+
+                width: 30%;
+                font-size: 20px;
+                display: flex;
+                justify-content: center;
+                font-weight: 900;
+            }
+
+            
+            header P {
+
+                /* background-color: black; */
+                font-size: 30px;
+                margin-top: 10rem;
+                color: black;
+                font-weight: 900;
+
+        }
+
+        .quesNans-bar {
+
+            /* background-color: aquamarine; */
+            width: 95%;
+            height: 45vh;
+            margin-top: 10rem;
+
+
+        }
+
+
+      .quesNans-bar div {
+
+        background-color: grey;
+        width: 80%;
+        height: 20vh;
+
+
+        } 
+
+        .nav-bar{
+            width: 90%;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+          
+        }
+
+        .nav-bar input {
+
+            background-color: coral;
+            width: 40vw;
+           
+         
+            
+        }
+
+
+    }
