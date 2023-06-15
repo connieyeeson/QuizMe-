@@ -14,7 +14,8 @@
      header{
 
         background-color:  cadetblue;
-        padding:1rem;
+        width: 98.4%;
+        padding: 1rem;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -22,16 +23,16 @@
         font-size: 30px;
         font-weight: 900;
 
+
      }
 
      header div {
 
             background-color: grey;
-            width: 15vw;
-            padding: 0.5rem;
+            width: 15%;
             border-radius: 5%;
-            text-align: center;
             display: flex;
+            justify-content: center;
             cursor: pointer;
 
 
@@ -56,7 +57,7 @@
 
     .quesNans-bar div {
 
-            background-color: grey;
+            background-color: rgb(249, 244, 244);
             width: 35vw;
             height: 30vh;
 
@@ -82,6 +83,18 @@
         height: 10vh;
 
 
+
+    }
+    .ques-bar p {
+
+        margin-top: 35px;
+        font-size: 25px;
+    }
+
+    .ans-bar label {
+
+        margin: 15px;
+        font-size: 25px;
     }
 
     .nav-bar {
@@ -89,7 +102,7 @@
         background-color: cadetblue;
         display: flex;
         justify-content: space-evenly;
-        width: 60vw;
+        width: 48%;
         margin-left:auto;
         margin-right: auto;
         padding: 0.3rem;
@@ -119,29 +132,28 @@
 
         @media screen and ( max-width:700px){
 
-            body {
-
-                background-color: gray;
-                width: 96.5%;
-               
-    
-         }
 
 
             header{
 
-                width: 95%;
-                background-color:  rgb(23, 235, 242);
-                height: 10vh;
+                width: 91.4%;
+                /* background-color:  rgb(23, 235, 242); */
+                height: 5vh;
+                display: flex;
+                justify-content: space-around;
+                float: none;
             }
 
             header div {
 
-                width: 30%;
+                width: 33%;
+                background-color:none;
+                float: none;
                 font-size: 20px;
                 display: flex;
-                justify-content: center;
+                /* justify-content: center; */
                 font-weight: 900;
+                text-decoration: ;
             }
 
             
@@ -149,8 +161,8 @@
 
                 /* background-color: black; */
                 font-size: 30px;
-                margin-top: 10rem;
-                color: black;
+                margin-top: 8rem;
+                color: rgb(26, 15, 15);
                 font-weight: 900;
 
         }
@@ -160,37 +172,119 @@
             /* background-color: aquamarine; */
             width: 95%;
             height: 45vh;
-            margin-top: 10rem;
+            margin-top: 70px;
 
 
         }
 
+        .quesNans-bar p{
+
+            font-size: 20px;
+         } 
 
       .quesNans-bar div {
 
         background-color: grey;
-        width: 80%;
+        width: 100%;
         height: 20vh;
 
 
         } 
 
-        .nav-bar{
+        .quesNans-bar   .ans-bar  {
+
+            /* background-color: aqua; */
             width: 90%;
+            display: flex;
+            flex-direction:column;
+            justify-content: space-evenly;
+            font-size: 10px;
+
+
+        }
+
+         .quesNans-bar .ques-bar {
+
+            width: 90%;
+
+        }
+
+        .ans-bar label {
+            /* background-color: brown; */
+            margin: 0px;
+            width: 70%;
+            margin-right: auto;
+            margin-left: auto;
+            
+
+        }
+/* 
+        .nav-bar{
+            width: 100%;
             margin-top: 1rem;
             display: flex;
             justify-content: space-between;
           
-        }
+        } */
 
         .nav-bar input {
 
             background-color: coral;
-            width: 40vw;
+            width: 90%;
+            font-size: 15px;
            
          
             
         }
 
 
+
+
     }
+
+                 /* 
+                /* TABLET VIEW */
+
+    @media screen and (max-width: 900px) {
+                
+        header{
+            width: 96%;
+            /* background-color: rgb(38, 48, 28); */
+
+        }
+
+
+        header div {
+
+            width: 30%;
+
+        }
+ 
+        .quesNans-bar  {
+
+            width: 80%;
+        }
+
+        .quesNans-bar div {
+
+            width: 70%;
+            font-size: 20px;
+            
+        }
+
+        .quesNans-bar label {
+
+            font-size: 10px;
+        }
+
+        .nav-bar  {
+
+            width: 80%;
+        }
+
+
+        .nav-bar input {
+
+            width: 30%;
+        }
+  } 
