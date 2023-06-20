@@ -10,47 +10,47 @@
 <body>
 
     <header>
-        <div class="timer"> 
-            <div>TIME 30</div>
+        <div class="timer" id="time"> 
+            0
         </div>
         <P>
-            QUIZme
+            QUIZme    
         </P>
         <div class="point"> 
-            <div>Score 0</div>
+             0
             
         </div>
     </header>
 
     <div class="quesNans-bar">
 
-        <div class="ques-bar">
+        <div class="ques-bar" id="questions">
                 <input type="button" value="START QUIZ ">
                 <p>
-                    Question: What is the capital of France?
+                    <!-- Question: What is the capital of France? -->
                 </p>
         </div>
-        <div class="ans-bar">
+        <div class="ans-bar" id="Ans">
 
-            <label>
+             <label>
                 <input type="radio" name="choice" >
-                A) Paris
+                
               </label>
               
               <label>
                 <input type="radio" name="choice">
-                B) London
+                
               </label>
               
               <label>
                 <input type="radio" name="choice">
-                C) Rome
+                
 
               </label>
               
               <label>
-                <input type="radio" name="choice" >
-                D) Berlin
+                <input type="radio" name="choice"  >
+                
 
               </label>
               
@@ -60,11 +60,11 @@
     </div>
 
     <div class="nav-bar">
-        <input type="button" value="Previous">
-        <input type="button" value="Text">
+        <input type="button" value="Previous" id="prevBtn">
+        <input type="button" value="Next" id="nextBtn">
     </div>
+    <script src="./node.js"></script>
 
 
 </body>
 </html>
-<script src="./node.js"></script>
