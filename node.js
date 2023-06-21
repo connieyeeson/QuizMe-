@@ -70,9 +70,16 @@
     {
 
         secs--;
-        if(Countdown === 0){
+        if(secs === 0){
 
             clearInterval(Countdown);
+        }
+
+        else if( secs < 0){
+
+            clearInterval(Countdown);
+
+            return;
         }
 
         updateTimeDisplay(secs);
@@ -81,10 +88,21 @@
 
     
         function updateTimeDisplay(timeInSeconds){
-        let remainingMins = Math.floor(timeInSeconds/60);
+        let remainingMins = Math.floor(timeInSeconds / 60);
         let remainingSecs = timeInSeconds % 60;
         timeElement.textContent = remainingMins + "m " + remainingSecs + "s";
 
     }
-}
-    Countdown(1);
+    }
+    Countdown(5);
+
+    // score
+
+    function displayScore(score) {
+        let scoreElement = document.querySelector('.point');
+        scoreElement.textContent = score;
+      }
+
+      displayScore(100);
+
+
