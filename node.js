@@ -1,4 +1,27 @@
 
+// Targeted Elements
+let question = document.getElementById('questions');
+let nextButton = document.getElementById("nextBtn");
+let ansBar = document.getElementById("ans");
+let scoreElement = document.querySelector('.point');
+let startQuiz = document.querySelector(".startQuiz");
+let display = document.querySelector(".quesNans-bar");
+let navBar = document.querySelector(".nav-bar");
+console.log(startQuiz);
+
+
+// Declared variables
+
+
+let correctAns;
+let counter = 1;
+let score = 0;
+let questionIn = false;
+
+
+
+
+// Functions
 
     const quizQuestions = [
 
@@ -49,7 +72,7 @@
 
             question: "Which country is famous for the Great Wall?",
             Options: [ "Liberia", "Brazil", "China","Italy"],
-            correctAns: 0
+            correctAns: 2
         },
 
         {
@@ -59,15 +82,64 @@
         },
      ];
 
-     
-  function Countdown(mins){
+    function checkQuestion(word, target) {
+        word = word.trim();
+        correctAns = correctAns.trim();
+        console.log(correctAns);
+        if(word === correctAns)
+        {
+            score = score + 10;
+            // console.log('correct');
+            target.classList.add('correct');
 
-    let timeElement = document.querySelector('.timer');
-    let secs = mins*60;
-    updateTimeDisplay(secs);
+            displayScore(score);
+            questionIn = true;
+        }
+        else {
+            // console.log('wrong')
+            target.classList.add('wrong');
+            questionIn = true;
+        }
+        
+    }
 
-    let Countdown = setInterval(function()
-    {
+     function updateQuestion(){
+        questionIn= false;
+        let correctIndex = quizQuestions[counter].correctAns;
+        ansBar.innerHTML = "";
+        let length = quizQuestions[counter].Options.length;
+        for (let i = 0; i < length; i++){
+
+        let answer = document.createElement("p");
+        answer.setAttribute("class", "choice");
+        answer.innerHTML = ` ${quizQuestions[counter].Options[i]}`
+        ansBar.appendChild(answer);
+        correctAns = quizQuestions[counter].Options[correctIndex];
+        } 
+        console.log(length);
+        console.log(quizQuestions[counter]);
+        question.innerHTML = `${quizQuestions[counter].question}`
+        counter++;
+    
+     }
+        
+
+    // updateQuestion();
+
+
+
+
+        // time
+      function Countdown(mins)
+      {
+
+      let timeElement = document.querySelector('.timer');
+      let secs = mins*60;
+      updateTimeDisplay(secs);
+
+     let Countdown = setInterval(function()
+
+            {
 
         secs--;
         if(secs === 0){
@@ -94,15 +166,38 @@
 
     }
     }
-    Countdown(5);
+    Countdown(5); 
 
     // score
 
     function displayScore(score) {
-        let scoreElement = document.querySelector('.point');
         scoreElement.textContent = score;
+
       }
 
-      displayScore(100);
+      displayScore(score);
 
+
+      // Event Handlers
+
+     nextButton.addEventListener('click', ()=>{
+        if( questionIn === false ) return;
+        // nextButton.setAttribute('disabled');
+        updateQuestion();
+     });
+     ansBar.addEventListener('click', (event)=>{
+        if ( questionIn === true ) return;
+        if(!event.target.classList.contains('choice')) return;
+
+        let word = event.target.textContent;
+        let element = event.target;
+        checkQuestion(word, element);
+
+     })
+     startQuiz.addEventListener('click', (event)=>{
+        updateQuestion();
+        event.target.style.display ="none";
+        display.style.display = "flex";
+        navBar.style.display = "flex";
+     });
 
