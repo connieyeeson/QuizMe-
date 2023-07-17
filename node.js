@@ -342,10 +342,9 @@ let currentQuestionIndex = 0;
 
      //  START linux QUIZ
 
-     startQuiz.addEventListener('click', (event)=> {
+    //  startQuiz.addEventListener('click', (event)=> {
 
-    //     if( jsQuestion     //  START linux QUIZ
-    //     ==   )
+    //     if( jsQuestion ==   )
 
     //  });
 
