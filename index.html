@@ -1,48 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="timer" id="time">0</div>
+      <p>QUIZme</p>
+      <div class="point">0</div>
+    </header>
+    <button id="start" class="startQuiz">START QUIZ</button>
+    <button id="CourseBtn" class="startQuiz"></button>
 
-      <header>
-        <div class="timer" id="time"> 
-            0
-         </div>
-         <P>
-            QUIZme    
-         </P>
-         <div class="point"> 
-             0
-            
-         </div>
-         </header>
-         <button id="start" class="startQuiz">START QUIZ</button>
-         <div class="quesNans-bar">
-
-         <div class="ques-bar" >
-          
-                <p id="questions">
-                    <!-- Question: What is the capital of France? -->
-                </p>
-         </div>
-         <div class="ans-bar" id="ans">
-
-            
-        </div>
-
+    <div class="quesNans-bar">
+      <div class="ques-bar">
+        <p id="questions">
+          <!-- Question: What is the capital of France? -->
+        </p>
+      </div>
+      <div class="ans-bar" id="ans"></div>
     </div>
 
     <div class="nav-bar">
-        <input type="button" value="Previous" id="prevBtn">
-        <input type="button" value="Next" id="nextBtn">
+      <input type="button" value="Exit" id="exitBtn" />
+      <input type="button" value="Next" id="nextBtn" />
     </div>
     <script src="./node.js"></script>
-
-
-</body>
+  </body>
 </html>
