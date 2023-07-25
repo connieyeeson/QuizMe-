@@ -1,13 +1,17 @@
  
 // Targeted Elements
-const nextButton = document.getElementById("nextBtn");
-const exitsButton = document.getElementById("exitBtn")
+const nextButton = document.getElementById("nextBtn")
+// let exitsButton = document.querySelector(".exitBtn");
+
 const mainDisplay = document.querySelector('.container');
 const startQuiz = document.querySelector(".startQuiz");
 const display = document.querySelector(".quesNans-bar");
 const navBar = document.querySelector(".nav-bar");
-const showQuestions = document.querySelectorAll(".options")
+const showQuestions = document.querySelectorAll(".options");
+let restartBtn;
 let quizType;
+const optionsFile = document.querySelector(".optionFile");
+const endScreen = document.querySelector(".endScreen");
 
 
 
@@ -232,7 +236,6 @@ let questionsLength = 10;
       
       <header>
       <div class="timer" id="time">0</div>
-      <p>QUIZme</p>
       <div class="point">0</div>
     </header>
     <div class="content-wrapper">
@@ -249,18 +252,20 @@ let questionsLength = 10;
       <div class="quesNans-bar">
       <div class="ques-bar">
         <p id="questions"></p>
-      </div>
+      </div>        
       <div class="ans-bar" id="ans"></div>
     </div>
     
 
     <div class="nav-bar">
-      <input type="button" value="Exit" id="exitBtn" class="exitBtn"/>
-      <input type="button" value="Next" id="nextBtn" class="nextBtn" />
+      
+      <input type='button' value='Exit' onclick='window.close()'/>
+      <input type="button" value="Next" id="nextBtn" class="nextBtn"/>
+
     </div>
       `
       updateQuestion(quizname);  
-
+      
     }
 
     function gameEnd(){
@@ -269,162 +274,170 @@ let questionsLength = 10;
          <div class="endScreen">
             <p>GameEnd</p>
             <p class="endScore"> Final Score ${score}</p>
+            <button class = "restart">Restart</button>
          </div>
       `
+      restartBtn = document.querySelector(".restart");
+
+      restartBtn.addEventListener('click', restarQuiz);
     }
+
     // selectOptions
+   showQuestions.forEach(function(question){
+   question.addEventListener('click', (event)=>{
 
-    showQuestions.forEach(function(question){
-
-      question.addEventListener('click', (event)=> {
-
-            if( question.innerText === "Linux"){
-               //  location.href = "index.html";
-               quizType = linuxQuestions;
+         if(question.innerText === "Linux"){
+            quizType = linuxQuestions;
+            quizStart();
+         }       
+               
+         else if( question.innerText === "General Knowledge"){
                quizStart();
-            }       
-            
-            else if( question.innerText === "General Knowledge"){
-                  quizStart();
-                  quizType = generalKownledgeQuestions
-                  //  location.href = "index.html";
+               quizType = generalKownledgeQuestions
 
-            }  
+         }  
 
-           else if( question.innerText === "JavaScript"){
-                  quizStart()
-                  quizType = jsQuestions
-               //  location.href = "index.html";
+         else if( question.innerText === "JavaScript"){
+               quizStart()
+               quizType = jsQuestions
 
-            }  
+         }  
              
         })
     })
 
     function checkQuestion(word, target) {
 
-        word = word.trim();
-        correctAns = correctAns.trim();
-      //   console.log(correctAns);
-        if(word === correctAns)
-        {
+      word = word.trim();
+      correctAns = correctAns.trim();
+     
+         if(word === correctAns){
             score = score + 10;
             displayScore(score);
-            // console.log('correct');
             target.classList.add('correct');
-
             questionIn = true;
-        }
-        else {
-            // console.log('wrong')
+
+            }
+         else {
             target.classList.add('wrong');
             questionIn = true;
-        }
+         }
 
-        questionsLength--;
+            questionsLength--;
 
-        if(questionsLength === 0){
-         gameEnd();
-         return;
-        }
-
-        
+         if(questionsLength === 0){
+            gameEnd();
+            return;
+         }
     }
 
-        // update linux Question;
+   // update Question;
+function updateQuestion(quizname){
+let ansBar = document.getElementById("ans");
+let question = document.getElementById('questions');
 
-     function updateQuestion(quizname){
-      let ansBar = document.getElementById("ans");
-      let question = document.getElementById('questions');
+      questionIn = false;
+let correctIndex = quizname[currentQuestionIndex].correctAns;
+      ansBar.innerHTML = ""
+      counter++;
+let length = 4;
+   for (let i = 0; i < length; i++){
 
+let answer = document.createElement("p");
+   answer.setAttribute("class", "choice");
+   answer.innerHTML = quizname[currentQuestionIndex].Options[i];
+   ansBar.appendChild(answer);
+   correctAns = quizname[currentQuestionIndex].Options[correctIndex];
+   
+} 
+   question.innerHTML = quizname[currentQuestionIndex].question;
+   currentQuestionIndex++
 
-        questionIn= false;
-        let correctIndex = quizname[currentQuestionIndex].correctAns;
-        ansBar.innerHTML = ""
-        counter++;
-        let length = 4;
-        for (let i = 0; i < length; i++){
+   const currentQuestion = quizname[currentQuestionIndex]
+         
+   }
+   
+   function displayScore(score){
+   let scoreElement = document.querySelector('.point');
+   scoreElement.textContent = score;
 
-        let answer = document.createElement("p");
-        answer.setAttribute("class", "choice");
-        answer.innerHTML = quizname[currentQuestionIndex].Options[i];
-        ansBar.appendChild(answer);
-        correctAns = quizname[currentQuestionIndex].Options[correctIndex];
-        } 
+   }
 
+      // TIME
+   function Countdown(mins)
+   {
 
-      //   console.log(length);
-      //   console.log(quizname[counter]);
-        question.innerHTML = quizname[currentQuestionIndex].question;
-        currentQuestionIndex++
-        const currentQuestion = quizname[currentQuestionIndex]
-            console.log(currentQuestion.question);
-            console.log(currentQuestion.Options)
-     }
-        
+   let timeElement = document.querySelector('.timer');
+   let secs = mins*60;
+   updateTimeDisplay(secs);
 
-     
-        
-     function displayScore(score){
-      let scoreElement = document.querySelector('.point');
-      scoreElement.textContent = score;
+   let Countdown = setInterval(function()
 
-     }
+         {
 
-        // time
-      function Countdown(mins)
-      {
+      secs--;
+      if(secs === 0){
 
-      let timeElement = document.querySelector('.timer');
-      let secs = mins*60;
+         clearInterval(Countdown);
+      }
+
+      else if( secs < 0){
+
+         clearInterval(Countdown);
+
+         return;
+      }
+
       updateTimeDisplay(secs);
 
-      let Countdown = setInterval(function()
+   }, 1000);     
 
-            {
+   
+      function updateTimeDisplay(timeInSeconds){
+      let remainingMins = Math.floor(timeInSeconds / 60);
+      let remainingSecs = timeInSeconds % 60;
+      timeElement.textContent = remainingMins + "m " + remainingSecs + "s";
 
-        secs--;
-        if(secs === 0){
-
-            clearInterval(Countdown);
-        }
-
-        else if( secs < 0){
-
-            clearInterval(Countdown);
-
-            return;
-        }
-
-        updateTimeDisplay(secs);
-
-    }, 1000);     
-
-    
-        function updateTimeDisplay(timeInSeconds){
-        let remainingMins = Math.floor(timeInSeconds / 60);
-        let remainingSecs = timeInSeconds % 60;
-        timeElement.textContent = remainingMins + "m " + remainingSecs + "s";
-
-    }
-    }
+   }
+   }
 
     
 
 
-    //  START linux QUIZ
+    //  START QUIZ
 mainDisplay.addEventListener('click', (event)=> {
-  if(event.target.classList.contains('choice')){
+   if(event.target.classList.contains('choice')){
    if ( questionIn === true ) return;
-      if(!event.target.classList.contains('choice')) return;
-
-      let word = event.target.textContent;
-      let element = event.target;
-      checkQuestion(word, element);
+   if(!event.target.classList.contains('choice')) return;
+   
+let word = event.target.textContent;
+let element = event.target;
+     checkQuestion(word, element);
   }
   else if(event.target.classList.contains('nextBtn')){
-         if( questionIn === false ) return;
-         updateQuestion(quizType);
+      if( questionIn === false ) return;
+      updateQuestion(quizType);
   }
+
+
+ 
 })
 
+
+// RESTART THE GAME
+
+function restarQuiz(){
+
+   correctAns;
+   counter = 0;
+   score = 0;
+   questionIn = false;
+   currentQuestionIndex = 0;
+   questionsLength = 10;
+
+
+   quizStart();
+}
+
+
+ 

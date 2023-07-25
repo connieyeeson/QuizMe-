@@ -10,6 +10,7 @@ body {
     color: black;
     position: relative;
     min-height: 100vh;
+    flex-wrap: wrap;
 
 
 
@@ -22,31 +23,30 @@ header {
     padding: 1.2rem 0;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     color: white;
     font-size: 30px;
     font-weight: 900;
-
-
+    font-family: 'Open Sans', sans-serif;
+    
 }
 
 header div {
 
     background-color: grey;
     /* padding: 0.5rem; */
-    width: 15%;
+    width: 8rem;
     border-radius: 5%;
     display: flex;
     justify-content: center;
     cursor: pointer;
     border: #F5EFE7 2px solid;
+    padding: 0.2rem;
 
 }
 #start {
    
     display: flex;
-    margin-right: auto;
-    margin-left: auto;
     background: transparent;
     font-size: 2rem;
     padding: 1rem;
@@ -56,12 +56,16 @@ header div {
     cursor: pointer;
     border-radius: 10px;
     text-shadow: 0 0 5px #213555;
-    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
+    flex-wrap: wrap;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 .quesNans-bar {
-    width: 38vw;
-    /* height: 70vh; */
+    padding: 20px;
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -69,24 +73,32 @@ header div {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    font-family: 'Open Sans', sans-serif;
 
 }
 
 .quesNans-bar div {
-    background-color: rgb(249, 244, 244);
-    width: 35vw;
+    background-color: rgb(206, 200, 200);
+    width: 55vw;
+    margin: 10px;
+    padding: 1.2rem;
 }
 
 .ques-bar {
 
     text-align: center;
+    height: 20vh;
+    font-weight: 200;
+  
+
 }
 
 .ans-bar {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* height: 10vh; */
+    height: 25vh;
+    font-weight: 200;
 }
 .choice {
     padding: 0 5px;
@@ -115,29 +127,26 @@ header div {
     /* background-color: cadetblue; */
     display: flex;
     justify-content: space-evenly;
-    width: 48%;
+    width: 96%;
     margin-left: auto;
     margin-right: auto;
     padding: 0.3rem;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 .nav-bar input {
     background-color: #4F709C;
-    /* width: 20px; */
+    width: 8rem;
     text-align: center;
     border-radius: 10%;
     border: #F5EFE7 2px solid;
     cursor: pointer;
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 400;
     padding: 0.5rem;
 }
 
-.ans-bar div {
-
-    margin: 10px;
-
-}
 
 .correct{
     background-color: green;
@@ -164,13 +173,16 @@ header div {
     font-size: 3rem;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 0 0 2px orangered;
+    flex-wrap: wrap;
+
 }
-.endScreen p:last-child{
-    font-size: 5rem;
+.endScreen {
+    font-size:30px;
     color: #213555;
     /* border: black solid; */
     width: 98%;
     text-align: center;
+    flex-wrap: wrap;
 }
 .optionFile {
 
@@ -229,155 +241,18 @@ h1 {
     font-family: 'Open Sans', sans-serif;
 }
 
+.restart {
 
-/* RESPONSIVENESS */
-
-/* @media screen and (max-width:700px) { */
-
-
-
-    header {
-
-        width:100%;
-        height: 5vh;
-        display: flex;
-        justify-content: space-around;
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    header div {
-
-        width: 33%;
-        background-color: none;
-        float: none;
-        font-size: 20px;
-        display: flex;
-        font-weight: 900;
-    }
-
-
-    header P {
-
-        font-size: 30px;
-        margin-top: 8rem;
-        color: rgb(231, 224, 224);
-        font-weight: 900;
-
-    }
-
-    .quesNans-bar {
-
-        width: 95%;
-        height: 45vh;
-        margin-top: 70px;
-
-
-    }
-
-    .quesNans-bar p {
-
-        font-size: 30px;
-    }
-
-    .quesNans-bar div {
-
-        width: 100%;
-        height: 20vh;
-
-
-    }
-
-    .quesNans-bar .ans-bar {
-
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        font-size: 10px;
-
-
-    }
-
-    .quesNans-bar .ques-bar {
-
-        width: 90%;
-
-    }
-
-   
-        
-
-
-
-   
-    .nav-bar input {
-
-        width: 30%;
-        font-size: 15px;
-
-
-
-    }
-
-
-    .startQuiz button {
-        position: absolute;
-        bottom: 40%;
-        left: 46%;
-        background: transparent;
-        font-size: 2rem;
-        padding: 1rem;
-        color: aliceblue;
-        border: none;
-        box-shadow: 0 0 5px #F5EFE7;
-        cursor: pointer;
-        border-radius: 50px;
-        text-shadow: 0 0 5px #213555;
+    background-color: #02122c;
+    color: aliceblue;
+    padding: 0.5rem;
+    width: 6rem;
+    border-radius: 20px;
+    border: black solid;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    margin: 20px;
+    flex-wrap: wrap;
 
 }
 
-
-  
-
-    .quesNans-bar div {
-
-        width: 70%;
-        font-size: 20px;
-
-    }
-
-    .quesNans-bar label {
-
-        font-size: 10px;
-        
-    }
-
-    .nav-bar {
-
-        width: 80%;
-    }
-
-
-    .nav-bar input {
-
-        width: 30%;
-    }
-
-
-    .startQuiz {
-        position: absolute;
-        top:40%;
-        right: 20%;
-        background: transparent;
-        font-size: 2rem;
-        padding: 1rem;
-        color: aliceblue;
-        border: none;
-        box-shadow: 0 0 5px #F5EFE7;
-        cursor: pointer;
-        border-radius: 50px;
-        text-shadow: 0 0 5px #213555;
-       
-}
